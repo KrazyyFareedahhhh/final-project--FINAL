@@ -1,0 +1,145 @@
+/* General Reset */
+* {
+  margin: 0; /* Removes default margin from all elements */
+  padding: 0; /* Removes default padding from all elements */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif; /* Sets a clean, sans-serif font */
+  background-color: #001F3F; /* Deep Midnight Blue background for the page */
+  color: #E0E0E0; /* Soft Moonlight Gray text for better readability */
+  line-height: 1.6; /* Improves text spacing for readability */
+}
+
+/* Header */
+header {
+  text-align: center; /* Centers the text inside the header */
+  padding: 20px 0; /* Adds vertical padding for spacing */
+  background-color: #003366; /* Twilight Blue background for the header */
+  color: #E0E0E0; /* Soft Moonlight Gray text color */
+  font-size: 2rem; /* Makes the text large and bold */
+  font-weight: bold; /* Enhances text visibility with bold font */
+  text-transform: uppercase; /* Converts text to uppercase for a strong impact */
+  border-bottom: 4px solid #4A90E2; /* Adds a decorative Starlight Blue border below */
+}
+
+/* Keyframe Animations */
+/* Fade-in animation for smooth entry */
+@keyframes fadeIn {
+from {
+    opacity: 0; /* Starts invisible */
+    transform: translateY(20px); /* Starts slightly lower */
+}
+to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Moves into position */
+}
+}
+
+/* Glow effect for text animation */
+@keyframes glow {
+0% {
+    text-shadow: 0 0 5px #4A90E2, 0 0 10px #4A90E2; /* Subtle blue glow */
+}
+100% {
+    text-shadow: 0 0 20px #4A90E2, 0 0 30px #4A90E2; /* Brighter blue glow */
+}
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #003366; /* Twilight Blue for the navbar */
+  padding: 10px 0; /* Adds vertical spacing */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Creates a subtle shadow for depth */
+}
+
+.nav-links {
+  display: flex; /* Aligns the links horizontally */
+  justify-content: center; /* Centers the links within the navbar */
+  list-style: none; /* Removes default bullet points */
+}
+
+.nav-links li {
+  margin: 0 15px; /* Adds spacing between each link */
+}
+
+.nav-links a {
+  text-decoration: none; /* Removes the default underline */
+  color: #E0E0E0; /* Soft Moonlight Gray text for links */
+  font-size: 1.2rem; /* Increases font size for readability */
+  font-weight: bold; /* Makes the links stand out */
+  padding: 8px 12px; /* Adds padding for a clickable area */
+  border-radius: 4px; /* Rounds the corners of the hover effect */
+}
+
+.nav-links a:hover {
+  background-color: #4A90E2; /* Starlight Blue for hover background */
+  color: #001F3F; /* Deep Midnight Blue text color on hover */
+  transition: 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Main Content */
+main {
+  padding: 20px; /* Adds spacing around the main content */
+  text-align: center; /* Centers the text in the main area */
+  background-color: #001F3F; /* Deep Midnight Blue background */
+}
+
+main h2 {
+  font-size: 2rem; /* Large, bold headings */
+  color: #4A90E2; /* Starlight Blue for emphasis */
+  margin-bottom: 10px; /* Adds spacing below the heading */
+}
+
+main p {
+  font-size: 1.1rem; /* Slightly larger than normal text for readability */
+}
+
+/* Back to Top Button */
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Sticks the button in a fixed position */
+  bottom: 20px; /* 20px from the bottom */
+  right: 30px; /* 30px from the right */
+  z-index: 99; /* Ensures it stays above other elements */
+  border: none; /* Removes border */
+  outline: none; /* Removes outline */
+  background-color: #4a90e2; /* Starlight Blue background */
+  color: #e0e0e0; /* Soft Moonlight Gray text */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 15px; /* Adds padding for a clickable area */
+  border-radius: 10px; /* Rounds the corners */
+  font-size: 18px; /* Increases the font size */
+  border: #003366; /* Border color matching the theme */
+}
+
+#myBtn:hover {
+  background-color: #80d8f6; /* Icy blue background on hover */
+  color: #001f3f; /* Deep Midnight Blue text color on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Centers the footer text */
+  padding: 10px; /* Adds vertical padding */
+  background-color: #003366; /* Twilight Blue background */
+  color: #E0E0E0; /* Soft Moonlight Gray text */
+  font-size: 0.9rem; /* Slightly smaller text */
+  border-top: 4px solid #4A90E2; /* Starlight Blue border for decoration */
+}
+
+footer a {
+  color: #4a90e2; /* Starlight Blue text */
+  text-decoration: none; /* Removes the underline */
+  font-size: 0.9rem; /* Small but readable size */
+  font-weight: bold; /* Slightly bolder for emphasis */
+  margin: 0 10px; /* Spacing between links */
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+footer a:hover {
+  color: #80d8f6; /* Icy blue text on hover */
+  text-decoration: underline; /* Adds underline for emphasis */
+}

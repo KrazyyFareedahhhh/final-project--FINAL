@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonlight Cafe - Menu</title>
+<link rel="stylesheet" href="CSS/stylesheet.css">
+<style>
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Section */
+#menu {
+    text-align: center;
+    padding: 20px;
+}
+#menu h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures spacing between content and button */
+    align-items: center;
+    background-color: #b5e2f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 350px;
+}
+.menu-item img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.menu-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+.menu-item button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+.menu-item button:hover {
+    background-color: #05b7f3;
+}
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Quick View Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #003366;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+.modal-content img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.modal-content h3 {
+    margin: 15px 0;
+    color: #ACCCF1;
+    font-size: 18px;
+}
+.modal-content p {
+    margin-bottom: 15px;
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#modal img {
+    max-width: 100%;
+    max-height: 500px; /* Adjust this value as needed */
+    object-fit: cover;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1 style="animation: glow 2s infinite alternate;">Moonlight Café</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Menu Section -->
+
+<section id="menu" style="animation: fadeIn 1.5s;">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+        <!-- Lunar Lattes -->
+        <div class="menu-item">
+            <img src="Pictures/coffee.png" alt="Lunar Lattes">
+            <h3>Lunar Lattes</h3>
+            <button onclick="openModal('lunar')">Quick View</button>
+        </div>
+
+        <!-- Midnight Mochas -->
+        <div class="menu-item">
+            <img src="Pictures/mocha.png" alt="Midnight Mochas">
+            <h3>Midnight Mochas</h3>
+            <button onclick="openModal('mocha')">Quick View</button>
+        </div>
+
+        <!-- Pannini-->
+        <div class="menu-item">
+            <img src="Pictures/panini.jpeg" alt="Pressed Panini">
+            <h3>Starbust Sandwich</h3>
+            <button onclick="openModal('panini')">Quick View</button>
+        </div>
+
+        <!-- Starlight Cappuccinos -->
+        <div class="menu-item">
+            <img src="Pictures/cappucino.png" alt="Starlight Cappuccinos">
+            <h3>Starlight Cappuccinos</h3>
+            <button onclick="openModal('cappuccino')">Quick View</button>
+        </div>
+
+        <!-- Galaxy Pastries -->
+        <div class="menu-item">
+            <img src="Pictures/cupcakes.jfif" alt="Galaxy Pastries">
+            <h3>Galaxy Pastries</h3>
+            <button onclick="openModal('pastries')">Quick View</button>
+        </div>
+
+        <!-- Chocolate-covered Strawberries -->
+        <div class="menu-item">
+            <img src="Pictures/strawberry.jfif" alt="Galaxy Strawberries" height="250px">
+            <h3>Chocolate-covered Galaxy Strawberries</h3>
+            <button onclick="openModal('strawberry')">Quick View</button>
+        </div>
+
+        <!-- Hot Chocolate -->
+        <div class="menu-item">
+            <img src="Pictures/hot chocolate.jfif" alt="Hot Chocolate">
+            <h3>Celestial Cocoa</h3>
+            <button onclick="openModal('hotcocoa')">Quick View</button>
+        </div>
+
+        <!-- Fig Crostini -->
+        <div class="menu-item">
+            <img src="Pictures/fig crostinis.jpeg" alt="Fig Crostinis">
+            <h3>Comet Crostinis</h3>
+            <button onclick="openModal('crostini')">Quick View</button>
+        </div>
+
+        <!-- Milkshakes -->
+        <div class="menu-item">
+            <img src="Pictures/milkshake.jpg"  alt="Creamy Milkshake" height="250" width="200">
+            <h3>Shooting-Star Milkshake</h3>
+            <button onclick="openModal('milkshake')">Quick View</button>
+        </div>
+
+        <!--Ice Tea-->
+        <div class="menu-item">
+            <img src="Pictures/ice tea.jfif" alt="Refreshing Ice-tea">
+            <h3>Twilight Tea</h3>
+            <button onclick="openModal('icetea')">Quick View</button>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+</section>
+
+<!-- Pinterest Sources -->
+<footer>
+        <p>&copy; 2025 Moonlight Cafe. All rights reserved.</p>
+        <a href="https://www.instagram.com/">Instagram</a> |
+        <a hrfe="https://x.com/">Twitter</a>
+    <br>
+        <p>📌 Sources:</p>
+        <a href="https://ca.pinterest.com/pin/13018286421681673/">Galaxy Pastries</a> | 
+        <a href="https://ca.pinterest.com/pin/113927065567752741/">Chocolate Strawberries</a> |
+        <a href="https://www.deviantart.com/nezukorempadeviart07/art/Galaxy-Milkshake-10-1039459353">Galaxy Milkshake</a> |
+        <p>Rest of Images : <a href="https://pixlr.com/image-generator/">AI Images</a> </p>
+</footer>
+
+<!-- Quick View Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <img id="modal-img" src="" alt="Menu Item">
+        <h3 id="modal-title">Menu Item</h3>
+        <p id="modal-description">Details about the menu item will go here.</p>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    /*
+    This code controls the "Scroll to Top" button.
+    - The button only appears when the user scrolls down the page.
+    - Clicking the button smoothly scrolls the user back to the top of the page.
+    */
+    const myButton = document.getElementById("myBtn");
+        //Show the button when the user scrolls down 20px from the top
+        window.onscroll = function () 
+        {
+        scrollFunction();
+        }
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                myButton.style.display = "block";} 
+            else {
+                myButton.style.display = "none";}
+        }
+
+    // Scroll to the top when the button is clicked
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+
+// Menu item details
+const menuDetails = {
+    lunar: {
+        img: 'Pictures/coffee.png',
+        title: 'Lunar Lattes',
+        description: 'Smooth and creamy latte infused with a hint of vanilla and topped with moon-dusted foam.',
+    },
+    mocha: {
+        img: 'Pictures/mocha.png',
+        title: 'Midnight Mochas',
+        description: 'Rich chocolate mocha with a touch of cinnamon, perfect for late-night cravings.',
+    },
+    cappuccino: {
+        img: 'Pictures/cappucino.png',
+        title: 'Starlight Cappuccinos',
+        description: 'Bold espresso with velvety foam, sprinkled with starlight cocoa powder.',
+    },
+    pastries: {
+        img: 'Pictures/cupcakes.jfif',
+        title: 'Galaxy Pastries',
+        description: 'Handmade pastries that sparkle like the night sky, with a taste to match.',
+    },
+    strawberry: {
+        img: 'Pictures/strawberry.jfif',
+        title: 'Chocolate-covered strawberries',
+        description: 'Juicy, handpicked strawberries dipped in rich, velvety chocolate and sprinkled with edible stardust.'
+    },
+    crostini: {
+        img: 'Pictures/fig crostinis.jpeg',
+        title: 'Comet Crostinis',
+        description: 'Toasted baguette slices topped with goat cheese, honey, and roasted figs.'
+    },
+    panini: {
+        img: 'Pictures/panini.jpeg',
+        title: 'Starbust Sandwich',
+        description: 'A pressed panini with turkey, brie, and cranberry sauce.'
+    },
+    milkshake: {
+        img: 'Pictures/milkshake.jpg',
+        title: 'Shooting Star Shake',
+        description: 'Creamy milkshakes topped with whipped cream, and star-shaped sprinkles!'
+    },
+    hotcocoa: {
+        img: 'Pictures/hot chocolate.jfif',
+        title: 'Celestial Cocoa',
+        description: 'A rich, velvety hot chocolate topped with whipped cream and galaxy sprinkles!'
+    },
+    icetea: {
+        img: 'Pictures/ice tea.jfif',
+        title: 'Twilight Tea',
+        description: 'A cool, citrusy iced tea with a hint of honey—refreshingly enchanting! '
+    }
+};
+
+// Open Modal
+function openModal(item) {
+    const details = menuDetails[item];
+    modalImg.src = details.img;
+    modalTitle.innerText = details.title;
+    modalDescription.innerText = details.description;
+    modal.style.display = 'flex';
+}
+
+// Close Modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+</script>
+
+</body>
+</html>

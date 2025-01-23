@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonlight Cafe</title>
+<link rel="stylesheet" href="CSS/stylesheet.css">
+<style>
+    /* Scroll to Top Button */
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #4a90e2;
+        color: #e0e0e0;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+        border: #003366;
+    }
+    #myBtn:hover {
+        background-color: #80d8f6;
+        color: #001f3f;
+    }
+
+    /* Button Styling */
+#learn-more {
+    background-color: #4A90E2; /* Starlight Blue */
+    color: #E0E0E0; /* Soft Moonlight Gray */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    border: none; /* Removed border */
+}
+#learn-more:hover {
+    background-color: #05b7f3; /* Icy Blue */
+}
+
+    /* Welcome Section */
+    #welcome {
+        text-align: center;
+        margin: 50px auto;
+    }
+    #welcome h2 {
+        font-size: 3rem;
+        color: #4A90E2;
+    }
+    #welcome p {
+        font-size: 1.5rem;
+        color: #e0e0e0;
+    }
+
+    /* Section Styling */
+    .section-container {
+        margin: 50px auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #b5e2f6; /* Light Blue Background */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .section-container h2 {
+        text-align: center;
+        color: #333; /* Dark Text */
+    }
+    .section-container p,
+    .section-container li {
+        color: black; /* Black Text */
+        text-align: center;
+    }
+    .section-image img {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        height: auto;
+    }
+    .section-container ul {
+        list-style-type: none;
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+        margin: 50px auto;
+        text-align: center;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #b5e2f6;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #testimonials h2 {
+        color: #333;
+    }
+    #testimonials blockquote {
+        font-style: italic;
+        color: black;
+    }
+    #testimonials cite {
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 style="animation: glow 2s infinite alternate; text-align: center;">Moonlight Café</h1>
+    </header>
+
+    <!-- Nav Bar -->
+    <nav>
+        <ul class="nav-links" style="text-align: center;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Welcome Message -->
+        <div id="welcome">
+            <h2>Welcome to Moonlight Cafe</h2>
+            <p>Your perfect escape under the stars. Relax, unwind, and savor the best coffee in town!</p>
+        </div>
+
+        <!-- Featured Items and Specials -->
+        <div class="section-container" style="animation: fadeIn 2s;">
+            <h2>Best Seller of the Week</h2>
+            <p><strong>Amber Spiced Latte:</strong> Our take on your traditional pumpkin spice latte with a dash of moonlight crystals. A customer favorite this season!</p>
+            <div class="section-image">
+                <img src="Pictures/pumpkin spice.jfif" alt="Amber Spiced Latte">
+            </div>
+        </div>
+
+        <!-- Upcoming Events and Promotions -->
+        <div class="section-container" style="animation: fadeIn 2.5s;">
+            <h2>Upcoming Events</h2>
+            <p>Join us every Friday for <strong>'Moonlight Melodies'</strong> - live acoustic performances starting at 7 PM. Reserve your spot today!</p>
+            <button id="learn-more">Learn More!</button>
+        </div>
+
+        <!-- Unique Selling Points -->
+        <div class="section-container" style="animation: fadeIn 3s;">
+            <h2>What Makes Us Special</h2>
+            <ul>
+                <li>Artisan Coffee crafted with passion</li>
+                <li>Freshly baked pastries made daily</li>
+                <li>Eco-friendly practices to protect the planet</li>
+            </ul>
+        </div>
+
+        <!-- Customer Testimonials -->
+        <div id="testimonials" style="animation: fadeIn 2.5s;">
+            <h2>What Our Customers Say</h2>
+            <blockquote>"The Moonlight Cafe is a slice of heaven! The ambiance is unmatched, and the coffee is divine."</blockquote>
+            <cite>- A Happy Customer</cite>
+        </div>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </main>
+
+    <!-- Footer Section -->
+    <footer style="text-align: center; margin-top: 20px;">
+        <p>&copy; 2025 Moonlight Cafe. All rights reserved.</p>
+        <a href="https://www.instagram.com/">Instagram</a> |
+        <a hrfe="https://x.com/">Twitter</a>
+        <p>📌 Sources:</p>
+        <a href="https://thehealthfulideas.com/iced-pumpkin-spiced-latte/">Latte</a>
+    </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        /*
+        This code controls the "Scroll to Top" button.
+        - The button only appears when the user scrolls down the page.
+        - Clicking the button smoothly scrolls the user back to the top of the page.
+        */
+        const myButton = document.getElementById("myBtn");
+        window.onscroll = function () {
+            scrollFunction();
+        }
+        function scrollFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                myButton.style.display = "block";
+            } else {
+                myButton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

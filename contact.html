@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonlight Cafe - Contact</title>
+<link rel="stylesheet" href="CSS/stylesheet.css">
+<style>
+/*The stars are styled to look the same at first, but then different
+using classes like '.one or .two' which change their color based on the rating.
+The '.star-container' class ensures the stars are aligned in the center. */
+.card {
+    max-width: 33rem; /* Limits the maximum width to keep the card compact */
+    background: #acccf1; /* Light blue background  */
+    color: #003366; /* Dark blue text color for contrast */
+    text-align: center; /* Aligns text inside the card */
+    align-items: center; /* Aligns items vertically within the container */
+    justify-content: center; /* Centers items horizontally within the container */
+    margin: 0 1rem; /* Adds space on the left and right of the card */
+    padding: 1rem; /* Adds space inside the card for better layout */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow around the card for depth */
+    width: 100%; /* Ensures the card takes up the full width of its container */
+    border-radius: 0.5rem; /* Rounds the corners of the card  */
+    margin-left: 33%; /* Centers the card horizontally  */
+    margin-right: 50%; /* Adds spacing to the right for balance */
+}
+.star {
+    font-size: 10vh; /* Makes the stars a specific size */
+    cursor: pointer; /* Changes the cursor to a pointer when hovered */
+}
+
+.one {
+    color: rgb(255, 0, 0); /* Red color for a 1-star rating */
+}
+
+.two {
+    color: rgb(255, 106, 0); /* Orange color for a 2-star rating */
+}
+
+.three {
+    color: rgb(251, 255, 120); /* Yellow color for a 3-star rating */
+}
+
+.four {
+    color: rgb(255, 255, 0); /* Bright yellow color for a 4-star rating */
+}
+
+.five {
+    color: rgb(24, 159, 14); /* Green color for a 5-star rating */
+}
+.star-container {
+    display: flex;/* Displays the stars in a row */
+    justify-content: center; /* Centers the stars horizontally */
+    align-items: center; /* Vertically aligns the stars */
+    gap: 10px; /* Adds spacing between stars */
+    margin: 10px 0; /* Adds spacing above and below the stars */
+}
+a {
+    color: #4a90e2; /* Starlight blue color */
+    text-decoration: none; /* Removes underline */
+    font-size: 0.9rem; /* Small but readable size */
+    font-weight: bold; /* Makes it slightly more visible */
+    margin: 0 10px; /* Adds spacing between links */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+a:hover {
+    color: #80d8f6; /* Icy blue on hover */
+    text-decoration: underline; /* Adds underline on hover for emphasis */
+}
+/* Style for the contact form container */
+.contact-container {
+    max-width: 600px; /* Set a maximum width for the container */
+    margin: 2rem auto; /* Center the container horizontally and add vertical spacing */
+    background: #b5e2f6; /* Light blue background for the form */
+    padding: 2rem; /* Add spacing inside the container */
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: #003366; /* Dark blue text for contrast */
+}
+
+/* Style for the form elements */
+.contact-container h2 {
+    text-align: center; /* Center the heading text */
+    color: #333; /* Darker text color for better readability */
+}
+
+.contact-container p {
+    text-align: center; /* Center-align the introductory text */
+    color: #003366; /* Use dark blue for consistency */
+}
+
+.contact-container input, .contact-container textarea, .contact-container button {
+    width: 100%; /* Make inputs and buttons span full width */
+    padding: 0.8rem; /* Add padding for comfortable interaction */
+    margin: 1rem 0; /* Add vertical spacing between elements */
+    border: 1px solid #80d8f6; /* Light blue border */
+    border-radius: 5px; /* Slightly round the edges */
+    font-size: 1rem; /* Consistent font size */
+}
+
+/* Focus styles for inputs and textarea */
+.contact-container input:focus, .contact-container textarea:focus {
+    border-color: #003366; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Style for the submit button */
+.contact-container button {
+    background-color: #4a90e2; /* Blue background for the button */
+    color: #fff; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.contact-container button:hover {
+    background-color: #80d8f6; /* Light blue on hover */
+}
+
+.contact-container form {
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 1.5rem; /* Reduce padding for smaller screens */
+    }
+}
+.rate-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #b5e2f6;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #003366;
+}
+/* Style for the location and map container */
+.location-map-container {
+    display: flex; /* Align the map and text side by side */
+    justify-content: flex-start; /* Add space between the items */
+    gap: 20px; /* Adds spacing between the location container and the map */
+    margin: 2rem auto; /* Add spacing around the container */
+    max-width: 1000px; /* Set a maximum width for the section */
+    flex-direction: row;
+
+}
+
+/* Style for the location details */
+.location-container {
+    max-width: 500px; /* Set a maximum width for the container */
+    max-height: 200px;
+    background: #b5e2f6; /* Light blue background for consistency */
+    padding: 2rem; /* Add spacing inside the container */
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center the text inside the container */
+    color: #003366; /* Dark blue text for contrast */
+}
+
+/* Style for the embedded map */
+.map {
+    border: 3px solid #4a90e2; /* Adds border around the iframe */
+    border-radius: 10px; /* Add rounded corners for consistency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    width: 600px; /* Set maximum width for the map */
+    height: 450px; /* Set a fixed height for the map */
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1 style="animation: glow 2s infinite alternate;">Moonlight Café</h1> <!-- Glowing animation for header -->
+    </header>
+
+<!-- Nav Bar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+<!--Code gotten from https://www.geeksforgeeks.org/star-rating-using-html-css-and-javascript/-->
+<!--This code involves the use of javascript, html and css to make a star rating on my webpage
+The spans are used to represent the stars. The stars are clickable and when you click it, it works with 
+the already amde JavaScript function to updte the rating each time.
+The text below the stars show the current rating and change when clicked.-->
+
+    <main style="animation: fadeIn 1.5s;">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>We’d love to hear from you! Please fill out the form below, and we’ll get back to you as soon as possible.</p>
+            <form>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="rate-container">
+            <h1>Rate Us!</h1>
+            <br />
+        <div class="star-container">
+            <span onclick="gfg(1)" class="star">★</span>
+            <span onclick="gfg(2)" class="star">★</span>
+            <span onclick="gfg(3)" class="star">★</span>
+            <span onclick="gfg(4)" class="star">★</span>
+            <span onclick="gfg(5)" class="star">★</span>
+        </div>
+        <h3 id="output">Rating is: 0/5</h3>
+        </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        <div class="location-map-container">
+            <div class="location-container">
+                <p>📍 Location: 123 Moonlight Lane, Starry City</p>
+                <p>📞 Phone:<a href="tel:+1234567890"> +1 (234) 567-890</a> </p>
+                <p>📧 Email:<a href="mailto:contact@moonlightcafe.com"> contact@moonlightcafe.com</a> </p>
+            </div>
+<div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.7403430567633!2d-79.4322014239468!3d43.881931171092205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2b1b49197575%3A0xebfb16847a01c9d9!2sMOONLIGHT%20CAFE%20%26%20BISTRO%20TURKISH%20CUSINE!5e0!3m2!1sen!2sca!4v1737650450505!5m2!1sen!2sca" 
+class="map"width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+</main>
+
+    <footer>
+        <p>&copy; 2025 Moonlight Cafe. All rights reserved.</p>
+        <a href="https://www.instagram.com/">Instagram</a> |
+        <a hrfe="https://x.com/">Twitter</a>
+    </footer>
+
+<!--Code gotten from https://www.geeksforgeeks.org/star-rating-using-html-css-and-javascript/-->
+<!--This code involves the use of javascript, html and css to make a star rating on my webpage
+The JavaScript code that connects the HTML and JavaScript is the "getElementsByClassName("star")"
+This means that any line of code that has the class "star" will be styled accordingly.
+When you click on a star, the "gfg(n)" function is called on. The variable 'n' represents 
+the number of stars clicked. The function resets the styling of the stars using the 'remove' function 
+and then applies a new code to make them change to a different color.-->
+
+    <script>
+    /*
+    This code controls the "Scroll to Top" button.
+    - The button only appears when the user scrolls down the page.
+    - Clicking the button smoothly scrolls the user back to the top of the page.
+    */
+    const myButton = document.getElementById("myBtn");
+        //Show the button when the user scrolls down 20px from the top
+        window.onscroll = function () 
+        {
+        scrollFunction();
+        }
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                myButton.style.display = "block";} 
+            else {
+                myButton.style.display = "none";}
+        }
+
+    // Scroll to the top when the button is clicked
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+
+
+// To access the stars
+let stars = 
+	document.getElementsByClassName("star");
+let output = 
+	document.getElementById("output");
+
+// Funtion to update rating
+function gfg(n) {
+	remove();
+	for (let i = 0; i < n; i++) {
+		if (n == 1) cls = "one";
+		else if (n == 2) cls = "two";
+		else if (n == 3) cls = "three";
+		else if (n == 4) cls = "four";
+		else if (n == 5) cls = "five";
+		stars[i].className = "star " + cls;
+	}
+	output.innerText = "Rating is: " + n + "/5";
+}
+
+// To remove the pre-applied styling
+function remove() {
+	let i = 0;
+	while (i < 5) {
+		stars[i].className = "star";
+		i++;
+	}
+}
+    </script>
+</body>
+</html>
+

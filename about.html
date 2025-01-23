@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonlight Cafe - About Us</title>
+<link rel="stylesheet" href="CSS/stylesheet.css">
+<style>
+        .about-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #b5e2f6; /* Deep navy for contrast */
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        main h2 {
+            text-align: center;
+            color: #333333; 
+        }
+        main p {
+            line-height: 1.6;
+            color: #003366;
+        }
+        .mission, .values, .invitation {
+            margin-bottom: 20px;
+        }
+        .values ul {
+            list-style: none;
+            padding: 0;
+            color: #003366;
+        }
+        .values ul li::before {
+            content: "✨";
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="animation: glow 2s infinite alternate;">Moonlight Café</h1> <!-- Glowing animation for header -->
+    </header>
+
+<!-- Nav Bar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+    <!-- About Us Section -->
+    <div class="about-container" style="animation: fadeIn 1.5s;">
+        <h2>About Us</h2>
+        <p>Welcome to <strong>Moonlight Café</strong>, a haven for coffee lovers, dreamers, and stargazers. We’re inspired by the serenity of moonlit nights and the joy of sharing stories over a perfect cup of coffee.</p>
+        
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>To craft unforgettable moments with artisan drinks, fresh pastries, and an atmosphere that feels like home under the stars.</p>
+        </section>
+        
+        <section class="values">
+            <h2>Our Values</h2>
+            <ul>
+                <li>High-quality, locally-sourced ingredients.</li>
+                <li>Eco-friendly practices to protect the planet.</li>
+                <li>Building a warm and welcoming community.</li>
+            </ul>
+        </section>
+        
+        <section class="invitation">
+            <h2>An Invitation</h2>
+            <p>We invite you to visit us, unwind, and experience the magic of <strong>Moonlight Café</strong>. Whether you’re here for a quick coffee break or an evening escape, we promise to make every moment special.</p>
+        </section>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</main>
+    <footer>
+        <p>&copy; 2025 Moonlight Cafe. All rights reserved.</p>
+        <a href="https://www.instagram.com/">Instagram</a> |
+        <a hrfe="https://x.com/">Twitter</a>
+    </footer>
+
+    <script>
+        /*
+        This code controls the "Scroll to Top" button.
+        - The button only appears when the user scrolls down the page.
+        - Clicking the button smoothly scrolls the user back to the top of the page.
+        */
+        const myButton = document.getElementById("myBtn");
+            //Show the button when the user scrolls down 20px from the top
+            window.onscroll = function () 
+            {
+            scrollFunction();
+            }
+    
+            function scrollFunction() {
+                if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                    myButton.style.display = "block";} 
+                else {
+                    myButton.style.display = "none";}
+            }
+            function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
